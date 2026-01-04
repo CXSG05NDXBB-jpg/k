@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用户故事 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+      .story-card {
+        transition: all 0.4s ease;
+      }
+      .story-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 4px 4px 12px rgba(139, 115, 85, 0.15);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="text-retro-pink">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="vi/yonghu.jpg" alt="用户故事" class="w-full h-auto">
+    </div>
+
+    <h3 class="font-song text-2xl text-center mb-10 text-retro-brown">花里的故事，心里的话</h3>
+
+    <!-- 用户故事卡片列表 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <!-- 故事1 -->
+      <div class="story-card bg-white p-8 rounded-lg retro-shadow">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+            <img src="https://picsum.photos/id/64/100/100" alt="用户头像" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-medium text-lg text-retro-brown">林小姐 · 28岁</h4>
+            <p class="text-xs text-retro-brown/70">告白故事 · 上海</p>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-4">
+          暗恋了3年的男生，一直不敢表白。在这家店选了白玫瑰+茉莉的花束，卡片只写了“送君茉莉，愿君莫离”。没想到他看懂了花语，第二天主动约我吃饭，现在我们已经在一起1年了。
+        </p>
+        <div class="flex items-center text-sm text-retro-brown/80">
+          <i class="fa fa-heart text-retro-pink mr-2"></i>
+          <span>花语：茉莉（你是我的、莫离）+ 白玫瑰（守护的爱）</span>
+        </div>
+        <div class="mt-4 rounded-md overflow-hidden">
+          <img src="img/moli.png" alt="告白花束" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- 故事2 -->
+      <div class="story-card bg-white p-8 rounded-lg retro-shadow">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+            <img src="https://picsum.photos/id/91/100/100" alt="用户头像" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-medium text-lg text-retro-brown">张先生 · 35岁</h4>
+            <p class="text-xs text-retro-brown/70">道歉故事 · 北京</p>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-4">
+          和最好的兄弟吵架冷战了2个月，想道歉又拉不下面子。选了黄玫瑰+向日葵的花篮，卡片写“向阳而生，友谊长存”。他收到后主动打电话给我，现在我们和好了，还约着一起钓鱼。
+        </p>
+        <div class="flex items-center text-sm text-retro-brown/80">
+          <i class="fa fa-heart text-retro-pink mr-2"></i>
+          <span>花语：黄玫瑰（歉意、友情）+ 向日葵（阳光的友情）</span>
+        </div>
+        <div class="mt-4 rounded-md overflow-hidden">
+          <img src="img/huang.jpg" alt="道歉花篮" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- 故事3 -->
+      <div class="story-card bg-white p-8 rounded-lg retro-shadow">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+            <img src="https://picsum.photos/id/26/100/100" alt="用户头像" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-medium text-lg text-retro-brown">王女士 · 42岁</h4>
+            <p class="text-xs text-retro-brown/70">祝福故事 · 广州</p>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-4">
+          妈妈60岁生日，选了康乃馨+剑兰的花束，搭配牡丹装饰。妈妈看到后特别开心，说这是她收到过最懂她的礼物，剑兰的“节节高升”也寓意着健康长寿。
+        </p>
+        <div class="flex items-center text-sm text-retro-brown/80">
+          <i class="fa fa-heart text-retro-pink mr-2"></i>
+          <span>花语：康乃馨（健康长寿）+ 剑兰（节节高升）+ 牡丹（富贵吉祥）</span>
+        </div>
+        <div class="mt-4 rounded-md overflow-hidden">
+          <img src="vi/7c45b58bcc130927781abb6fda5f795a.png" alt="生日花束" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- 故事4 -->
+      <div class="story-card bg-white p-8 rounded-lg retro-shadow">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+            <img src="https://picsum.photos/id/76/100/100" alt="用户头像" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-medium text-lg text-retro-brown">李同学 · 22岁</h4>
+            <p class="text-xs text-retro-brown/70">毕业故事 · 成都</p>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-4">
+          毕业季给室友们每人准备了一束勿忘我+雏菊的小花束，纪念我们4年的青春。大家看到花语“永恒的记忆+勇敢前行”都哭了，约定每年都要聚一次。
+        </p>
+        <div class="flex items-center text-sm text-retro-brown/80">
+          <i class="fa fa-heart text-retro-pink mr-2"></i>
+          <span>花语：勿忘我（永恒的记忆）+ 雏菊（勇敢、坚强）</span>
+        </div>
+        <div class="mt-4 rounded-md overflow-hidden">
+          <img src="img/wuwangwo.jpg" alt="毕业花束" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- 故事5 -->
+      <div class="story-card bg-white p-8 rounded-lg retro-shadow">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+            <img src="https://picsum.photos/id/54/100/100" alt="用户头像" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-medium text-lg text-retro-brown">陈先生 · 40岁</h4>
+            <p class="text-xs text-retro-brown/70">纪念日 · 深圳</p>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-4">
+          和妻子结婚10周年，选了红玫瑰+桔梗的花束，搭配薰衣草点缀。妻子说桔梗的“永恒的爱”比千言万语都动人，这束花现在做成了干花，摆在客厅里。
+        </p>
+        <div class="flex items-center text-sm text-retro-brown/80">
+          <i class="fa fa-heart text-retro-pink mr-2"></i>
+          <span>花语：红玫瑰（热恋）+ 桔梗（永恒的爱）+ 薰衣草（心心相印）</span>
+        </div>
+        <div class="mt-4 rounded-md overflow-hidden">
+          <img src="img/xunyi.jpg" alt="纪念日花束" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- 故事6 -->
+      <div class="story-card bg-white p-8 rounded-lg retro-shadow">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+            <img src="https://picsum.photos/id/42/100/100" alt="用户头像" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-medium text-lg text-retro-brown">赵阿姨 · 58岁</h4>
+            <p class="text-xs text-retro-brown/70">康复祝福 · 杭州</p>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-4">
+          闺蜜生病住院，选了百合+向日葵的花篮去探望，百合的“纯洁安康”和向日葵的“积极向上”，希望她早日康复。现在她已经出院，还学着我送的花艺教程自己插花。
+        </p>
+        <div class="flex items-center text-sm text-retro-brown/80">
+          <i class="fa fa-heart text-retro-pink mr-2"></i>
+          <span>花语：百合（纯洁安康）+ 向日葵（积极向上）</span>
+        </div>
+        <div class="mt-4 rounded-md overflow-hidden">
+          <img src="vi/baihe.png" alt="康复花篮" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 故事征集模块 -->
+    <div class="bg-white p-8 rounded-lg retro-shadow text-center">
+      <h4 class="font-song text-xl mb-4 text-retro-brown">分享你的花语故事</h4>
+      <p class="text-base text-retro-brown/80 mb-6">
+        每一束花，都藏着一段温暖的故事。如果你也有和花相关的美好回忆，欢迎告诉我们
+      </p>
+      <button class="px-8 py-3 bg-retro-pink/80 text-white rounded-full retro-shadow hover-scale">
+        <i class="fa fa-pencil mr-2"></i> 我要分享故事
+      </button>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS（可选，如需故事卡片动画/交互可添加） -->
+  <script>
+    // 页面滚动时故事卡片渐入效果
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const storyCards = document.querySelectorAll('.story-card');
+      storyCards.forEach(card => {
+        card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家用装饰 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="text-retro-pink">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="imag/fengmian2.png" alt="家用装饰花艺" class="w-full h-auto">
+    </div>
+
+    <!-- 空间标签（带交互） -->
+    <h3 class="font-song text-2xl text-center mb-8 text-retro-brown">家居空间花艺推荐</h3>
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="home-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-space="客厅">客厅</button>
+      <button class="home-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-space="卧室">卧室</button>
+      <button class="home-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-space="餐厅">餐厅</button>
+      <button class="home-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-space="书房">书房</button>
+      <button class="home-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-space="玄关">玄关</button>
+    </div>
+
+    <!-- 客厅内容（默认显示） -->
+    <div class="home-content" id="客厅">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">客厅花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">大型落地花艺</span>：天堂鸟、鹤望兰、散尾葵，提升空间高级感，适合大客厅</li>
+            <li><span class="font-medium">圆桌花艺</span>：玫瑰+百合+尤加利，圆形插花，高低错落，温馨又大气</li>
+            <li><span class="font-medium">轻奢花艺</span>：蝴蝶兰盆栽+金属花器，简约时尚，适配现代装修风格</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-home mr-2"></i> 搭配技巧：客厅花艺要与装修风格匹配，北欧风选简约花材，新中式选兰花/梅花</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="imag/keting.jpg" alt="客厅花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 卧室内容（默认隐藏） -->
+    <div class="home-content hidden" id="卧室">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">卧室花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">床头柜小花艺</span>：洋桔梗+小雏菊，浅色系，香气清淡，助眠不刺激</li>
+            <li><span class="font-medium">飘窗花艺</span>：多肉组合+小型月季，生机勃勃，打造治愈角落</li>
+            <li><span class="font-medium">悬挂花艺</span>：空气凤梨+佛珠，不占空间，清新自然</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-bed mr-2"></i> 避坑提醒：卧室避免浓香花材（百合/茉莉），避免大型绿植（夜间耗氧）</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/woshi.png" alt="卧室花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 餐厅内容（默认隐藏） -->
+    <div class="home-content hidden" id="餐厅">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">餐厅花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">餐桌花艺</span>：洋牡丹+铃兰，低矮插花，不遮挡视线，花色清新</li>
+            <li><span class="font-medium">餐边柜花艺</span>：向日葵+香槟玫瑰，暖色系，增加食欲</li>
+            <li><span class="font-medium">厨房窗台</span>：香草盆栽（迷迭香/薄荷），实用又美观，可食用</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-cutlery mr-2"></i> 搭配技巧：餐桌花艺高度不超过20cm，避免带刺/易掉落花粉的花材</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="imag/canting.png" alt="餐厅花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 书房内容（默认隐藏） -->
+    <div class="home-content hidden" id="书房">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">书房花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">书桌花艺</span>：文竹+菖蒲，文人风骨，安静雅致，不占空间</li>
+            <li><span class="font-medium">书架花艺</span>：小型兰花盆栽，香气清幽，提升书卷气</li>
+            <li><span class="font-medium">窗台花艺</span>：松枝+梅花枝，枯山水风格，禅意十足</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-book mr-2"></i> 氛围营造：书房花艺以简约、禅意为核心，避免色彩过于鲜艳的花材</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="imag/shufang.jpg" alt="书房花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 玄关内容（默认隐藏） -->
+    <div class="home-content hidden" id="玄关">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">玄关花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">高瓶插花</span>：腊梅枝+银柳，干支花艺，无需养护，氛围感拉满</li>
+            <li><span class="font-medium">花艺摆件</span>：永生花+玻璃罩，持久美观，提升入户仪式感</li>
+            <li><span class="font-medium">小型盆栽</span>：虎皮兰+君子兰，好养耐旱，净化空气</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-key mr-2"></i> 设计要点：玄关花艺要小巧精致，避免遮挡动线，选耐阴好养的品种</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="imag/xuanguan.jpg" alt="玄关花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.home-tab');
+      const contents = document.querySelectorAll('.home-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 切换内容
+          contents.forEach(content => content.classList.add('hidden'));
+          const target = tab.getAttribute('data-space');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

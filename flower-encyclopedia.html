@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花语百科 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="text-retro-pink">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="img/ab3be584ff28192b846b82c119eaa67f.jpg" alt="花语百科" class="w-full h-auto">
+    </div>
+
+    <!-- 花语分类标签（带交互） -->
+    <h3 class="font-song text-2xl text-center mb-8 text-retro-brown">花语全解析</h3>
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="ency-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-type="爱情">爱情花语</button>
+      <button class="ency-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-type="友情">友情花语</button>
+      <button class="ency-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-type="祝福">祝福花语</button>
+      <button class="ency-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-type="励志">励志花语</button>
+      <button class="ency-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-type="伤感">伤感花语</button>
+    </div>
+
+    <!-- 爱情花语（默认显示） -->
+    <div class="ency-content" id="爱情">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 玫瑰 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/3dbf8cb7acc9f1d9cf2c6f0605272869.jpg" alt="玫瑰" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">玫瑰</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">红玫瑰：</span>热恋、我爱你<br>
+            <span class="font-medium">粉玫瑰：</span>初恋、温柔的爱<br>
+            <span class="font-medium">白玫瑰：</span>纯洁、守护的爱<br>
+            <span class="font-medium">黑玫瑰：</span>神秘、致命的吸引
+          </p>
+        </div>
+        <!-- 郁金香 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/8238816b7ff5f9f52958fc7970e3750e.jpg" alt="郁金香" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">郁金香</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">红郁金香：</span>爱的宣言<br>
+            <span class="font-medium">粉郁金香：</span>永远的爱<br>
+            <span class="font-medium">紫郁金香：</span>无尽的爱<br>
+            <span class="font-medium">白郁金香：</span>纯洁的爱恋
+          </p>
+        </div>
+        <!-- 桔梗 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/eebe85ae9a6290f0eeff35ad1240b353.jpg" alt="桔梗" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">桔梗</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">白桔梗：</span>永恒的爱、无望的爱<br>
+            <span class="font-medium">蓝桔梗：</span>真诚不变的爱<br>
+            <span class="font-medium">粉桔梗：</span>温柔的守候
+          </p>
+        </div>
+        <!-- 勿忘我 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/898330a58dabb4d085d1a6de348b310e.jpg" alt="勿忘我" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">勿忘我</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">勿忘我：</span>永恒的记忆、请想念我<br>
+            <span class="font-medium">粉勿忘我：</span>浪漫的想念<br>
+            <span class="font-medium">蓝勿忘我：</span>深情的告白
+          </p>
+        </div>
+        <!-- 茉莉 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/e4df014c71a7194b100740508e0fc9e3.jpg" alt="茉莉" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">茉莉</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">茉莉：</span>你是我的、莫离<br>
+            <span class="font-medium">白茉莉：</span>纯洁的爱<br>
+            <span class="font-medium">紫茉莉：</span>猜忌、玲珑心
+          </p>
+        </div>
+        <!-- 薰衣草 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/95e81dc99921d9df3e56711658a6c42b.jpg" alt="薰衣草" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">薰衣草</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">薰衣草：</span>等待爱情、心心相印<br>
+            <span class="font-medium">蓝薰衣草：</span>忧郁的爱<br>
+            <span class="font-medium">紫薰衣草：</span>浪漫的守候
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 友情花语（默认隐藏） -->
+    <div class="ency-content hidden" id="友情">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 向日葵 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/716321aaaf7ac88b9ac86594384c4a14.jpg" alt="向日葵" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">向日葵</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">向日葵：</span>友情、阳光、积极向上<br>
+            <span class="font-medium">迷你向日葵：</span>温暖的陪伴<br>
+            <span class="font-medium">重瓣向日葵：</span>深厚的友谊
+          </p>
+        </div>
+        <!-- 黄玫瑰 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/4245c55d87576087549fe0f16369b478.jpg" alt="黄玫瑰" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">黄玫瑰</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">黄玫瑰：</span>友情、祝福、歉意<br>
+            <span class="font-medium">橙黄玫瑰：</span>热情的友情<br>
+            <span class="font-medium">浅黄玫瑰：</span>纯洁的友情
+          </p>
+        </div>
+        <!-- 百合 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/8c09e8eeaa05095191abc23de1a8fa11.jpg" alt="百合" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">百合</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">黄百合：</span>友谊长存、快乐<br>
+            <span class="font-medium">白百合：</span>纯洁的友情<br>
+            <span class="font-medium">粉百合：</span>温馨的陪伴
+          </p>
+        </div>
+        <!-- 鸢尾 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/mu.jpg" alt="鸢尾" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">鸢尾</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">蓝鸢尾：</span>信任、知己<br>
+            <span class="font-medium">白鸢尾：</span>纯真的友情<br>
+            <span class="font-medium">黄鸢尾：</span>友谊永固
+          </p>
+        </div>
+        <!-- 康乃馨 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/7fdc6827ed1e94cafd3886d7f8f75c58.jpg" alt="康乃馨" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">康乃馨</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">黄康乃馨：</span>长久的友谊<br>
+            <span class="font-medium">粉康乃馨：</span>温馨的祝福<br>
+            <span class="font-medium">白康乃馨：</span>纯洁的友情
+          </p>
+        </div>
+        <!-- 满天星 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/cb7599d1aa41389b460ed5e397706017.jpg" alt="满天星" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">满天星</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">满天星：</span>配角、默默的陪伴<br>
+            <span class="font-medium">白满天星：</span>纯洁的友情<br>
+            <span class="font-medium">粉满天星：</span>温柔的守护
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 祝福花语（默认隐藏） -->
+    <div class="ency-content hidden" id="祝福">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 牡丹 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="img/muu.png" alt="牡丹" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">牡丹</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">红牡丹：</span>富贵吉祥、圆满<br>
+            <span class="font-medium">粉牡丹：</span>雍容华贵、幸福<br>
+            <span class="font-medium">白牡丹：</span>纯洁高雅、安康
+          </p>
+        </div>
+        <!-- 康乃馨 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/j.jpg" alt="康乃馨" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">康乃馨</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">红康乃馨：</span>健康长寿、感恩<br>
+            <span class="font-medium">粉康乃馨：</span>温馨祝福、美好<br>
+            <span class="font-medium">白康乃馨：</span>纯洁的祝福
+          </p>
+        </div>
+        <!-- 剑兰 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/3ba615be9c6a5f0177627c3e24fafce7.jpg" alt="剑兰" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">剑兰</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">剑兰：</span>节节高升、福禄双全<br>
+            <span class="font-medium">红剑兰：</span>事业红火<br>
+            <span class="font-medium">粉剑兰：</span>生活美满
+          </p>
+        </div>
+        <!-- 水仙 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/a28c8d428ebba1255342847b2d65da12.png" alt="水仙" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">水仙</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">水仙：</span>吉祥如意、团圆<br>
+            <span class="font-medium">白水仙：</span>纯洁吉祥<br>
+            <span class="font-medium">黄水仙：</span>财运亨通
+          </p>
+        </div>
+        <!-- 兰花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/02e6885ecd927d758a76288238338c8e.jpg" alt="兰花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">兰花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">兰花：</span>高洁典雅、福气<br>
+            <span class="font-medium">墨兰：</span>吉祥如意<br>
+            <span class="font-medium">春兰：</span>平安喜乐
+          </p>
+        </div>
+        <!-- 桃花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/20fd19c0ee47c1f359fd6b91610d3974.png" alt="桃花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">桃花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">桃花：</span>大展宏图、桃花运<br>
+            <span class="font-medium">粉桃花：</span>人缘旺盛<br>
+            <span class="font-medium">白桃花：</span>平安顺遂
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 励志花语（默认隐藏） -->
+    <div class="ency-content hidden" id="励志">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 向日葵 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/7ff8bafdc669a14a785b59edb5682949.png" alt="向日葵" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">向日葵</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">向日葵：</span>积极向上、追逐梦想<br>
+            <span class="font-medium">花语延伸：</span>永远向着阳光，永不言弃
+          </p>
+        </div>
+        <!-- 梅花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/me.png" alt="梅花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">梅花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">梅花：</span>坚韧不拔、傲骨迎风<br>
+            <span class="font-medium">花语延伸：</span>不经一番寒彻骨，怎得梅花扑鼻香
+          </p>
+        </div>
+        <!-- 雏菊 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/chu.png" alt="雏菊" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">雏菊</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">雏菊：</span>勇敢、坚强、藏在心底的爱<br>
+            <span class="font-medium">花语延伸：</span>平凡但不普通，默默努力
+          </p>
+        </div>
+        <!-- 仙人掌花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/xian.jpg" alt="仙人掌花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">仙人掌花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">仙人掌花：</span>顽强、坚韧、生命力旺盛<br>
+            <span class="font-medium">花语延伸：</span>在逆境中绽放最美的自己
+          </p>
+        </div>
+        <!-- 风信子 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/feng.jpg" alt="风信子" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">风信子</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">风信子：</span>重生、忘记过去、迎接未来<br>
+            <span class="font-medium">花语延伸：</span>放下过往，重新出发
+          </p>
+        </div>
+        <!-- 波斯菊 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/bo.jpg" alt="波斯菊" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">波斯菊</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">波斯菊：</span>坚强、快乐、永远快乐<br>
+            <span class="font-medium">花语延伸：</span>无论遇到什么，都要笑着面对
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 伤感花语（默认隐藏） -->
+    <div class="ency-content hidden" id="伤感">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 蓝色妖姬 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/lan.jpg" alt="蓝色妖姬" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">蓝色妖姬</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">蓝色妖姬：</span>忧郁、珍贵的爱、得不到的爱<br>
+            <span class="font-medium">花语延伸：</span>爱而不得，最是遗憾
+          </p>
+        </div>
+        <!-- 昙花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/tan.jpg" alt="昙花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">昙花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">昙花：</span>刹那的美丽、瞬间的永恒<br>
+            <span class="font-medium">花语延伸：</span>美好的事物总是短暂
+          </p>
+        </div>
+        <!-- 彼岸花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/bi.png" alt="彼岸花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">彼岸花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">彼岸花：</span>分离、伤心、永不相见<br>
+            <span class="font-medium">花语延伸：</span>花开不见叶，叶生不见花
+          </p>
+        </div>
+        <!-- 丁香花 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/ding.png" alt="丁香花" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">丁香花</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">丁香花：</span>忧愁、思念、迷茫<br>
+            <span class="font-medium">花语延伸：</span>青鸟不传云外信，丁香空结雨中愁
+          </p>
+        </div>
+        <!-- 虞美人 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/yu.png" alt="虞美人" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">虞美人</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">虞美人：</span>生离死别、悲歌<br>
+            <span class="font-medium">花语延伸：</span>一朝春尽红颜老，花落人亡两不知
+          </p>
+        </div>
+        <!-- 荼蘼 -->
+        <div class="bg-white p-6 rounded-lg retro-shadow hover-scale">
+          <div class="w-full h-48 overflow-hidden mb-4 rounded-md">
+            <img src="imag/cha.png" alt="荼蘼" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-song text-lg mb-2 text-retro-brown">荼蘼</h4>
+          <p class="text-sm space-y-1">
+            <span class="font-medium">荼蘼：</span>末路之美、青春已逝<br>
+            <span class="font-medium">花语延伸：</span>开到荼蘼花事了，丝丝天棘出莓墙
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.ency-tab');
+      const contents = document.querySelectorAll('.ency-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 切换内容
+          contents.forEach(content => content.classList.add('hidden'));
+          const target = tab.getAttribute('data-type');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

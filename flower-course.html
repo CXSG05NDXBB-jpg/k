@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花艺教程 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+      .step-number {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #C88A9E;
+        color: white;
+        font-size: 12px;
+        margin-right: 8px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="text-retro-pink">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="img/a61b6e7e5856e870c13a347cfbba2424.jpg" alt="花艺教程" class="w-full h-auto">
+    </div>
+
+    <!-- 教程分类标签（带交互） -->
+    <h3 class="font-song text-2xl text-center mb-8 text-retro-brown">零基础花艺教程</h3>
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="course-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-course="花束">基础花束</button>
+      <button class="course-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-course="花篮">复古花篮</button>
+      <button class="course-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-course="瓶插">简约瓶插</button>
+      <button class="course-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-course="干花">干花制作</button>
+      <button class="course-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-course="保养">鲜花保养</button>
+    </div>
+
+    <!-- 基础花束教程（默认显示） -->
+    <div class="course-content" id="花束">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">基础螺旋花束制作</h4>
+          
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">准备材料</h5>
+          <ul class="text-base space-y-2 mb-6 list-disc list-inside">
+            <li>主花材：玫瑰/郁金香/百合（8-10枝）</li>
+            <li>配花：满天星/桔梗/勿忘我（适量）</li>
+            <li>配叶：尤加利叶/洋桔梗叶（3-5枝）</li>
+            <li>工具：花艺剪刀、花艺胶带、丝带、包装纸</li>
+          </ul>
+
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">制作步骤</h5>
+          <ol class="text-base space-y-4 mb-6">
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">1</span>
+              <span>处理花材：将花材根部45°斜剪，去除多余叶片，保留花头下方10cm内的叶片</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">2</span>
+              <span>螺旋打底：取一枝主花作为中心，其他花材以螺旋方式（顺时针/逆时针）依次添加，保持花杆交叉</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">3</span>
+              <span>添加配花：在主花间隙加入配花，增加层次感，注意花束整体呈圆形</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">4</span>
+              <span>加入配叶：在花束外围加入配叶，修饰轮廓，使花束更饱满</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">5</span>
+              <span>固定花束：用花艺胶带在花杆交叉处缠绕固定，注意缠绕紧实但不损伤花杆</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">6</span>
+              <span>包装装饰：用包装纸包裹花杆，系上丝带，修剪底部花杆至统一长度</span>
+            </li>
+          </ol>
+
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-lightbulb-o mr-2"></i> 新手技巧：螺旋手法是关键，每次添加花材时保持同一旋转方向，花束会更立体</p>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/ji.jpg" alt="花束制作1" class="w-full h-auto">
+          </div>
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/ji1.jpg" alt="花束制作2" class="w-full h-auto">
+          </div>
+          <!-- 教程视频 -->
+          <div class="mt-4 rounded-lg overflow-hidden retro-shadow hover-scale">
+            <video controls class="w-full h-auto">
+              <source src="vi/ji2.mp4" type="video/mp4">
+              浏览器不支持视频播放
+            </video>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">基础花束制作演示</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 复古花篮教程（默认隐藏） -->
+    <div class="course-content hidden" id="花篮">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">复古花篮制作</h4>
+          
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">准备材料</h5>
+          <ul class="text-base space-y-2 mb-6 list-disc list-inside">
+            <li>主花材：复古玫瑰/洋牡丹/芍药（6-8枝）</li>
+            <li>配花：小雏菊/风铃草/蕾丝花（适量）</li>
+            <li>配叶：银叶菊/尤加利/龟背叶（适量）</li>
+            <li>工具：藤编花篮、花泥、花艺剪刀、防水纸、装饰麻绳</li>
+          </ul>
+
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">制作步骤</h5>
+          <ol class="text-base space-y-4 mb-6">
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">1</span>
+              <span>处理花泥：将花泥浸泡至完全吸水，切割成适配花篮的大小，用防水纸包裹后放入花篮固定</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">2</span>
+              <span>打底配叶：在花泥边缘插入配叶，勾勒出花篮的轮廓，注意高低错落</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">3</span>
+              <span>插入主花：将主花材按三角形构图插入花泥，高的在前，矮的在后，形成层次感</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">4</span>
+              <span>填充配花：在主花间隙插入配花，填补空白，注意颜色搭配协调</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">5</span>
+              <span>细节装饰：用麻绳缠绕花篮边缘，添加复古卡片或小装饰，提升氛围感</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">6</span>
+              <span>后期养护：在花泥中加入少量清水，避免阳光直射，延长花期</span>
+            </li>
+          </ol>
+
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-lightbulb-o mr-2"></i> 复古风格技巧：选择低饱和度花材，搭配银叶菊等复古配叶，花篮选择藤编/竹编材质更有质感</p>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/fu.jpg" alt="花篮制作1" class="w-full h-auto">
+          </div>
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/fu1.jpg" alt="花篮制作2" class="w-full h-auto">
+          </div>
+          <!-- 教程视频 -->
+          <div class="mt-4 rounded-lg overflow-hidden retro-shadow hover-scale">
+            <video controls class="w-full h-auto">
+              <source src="vi/fu2.mp4" type="video/mp4">
+              浏览器不支持视频播放
+            </video>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">复古花篮制作演示</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 简约瓶插教程（默认隐藏） -->
+    <div class="course-content hidden" id="瓶插">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">简约瓶插制作</h4>
+          
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">准备材料</h5>
+          <ul class="text-base space-y-2 mb-6 list-disc list-inside">
+            <li>主花材：单枝玫瑰/郁金香/铃兰（3-5枝）</li>
+            <li>配花：小枝雏菊/满天星/洋桔梗（少量）</li>
+            <li>配叶：尤加利叶/春羽叶/散尾葵（1-2枝）</li>
+            <li>工具：透明玻璃瓶/陶瓷花瓶、花艺剪刀、保鲜剂</li>
+          </ul>
+
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">制作步骤</h5>
+          <ol class="text-base space-y-4 mb-6">
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">1</span>
+              <span>处理花瓶：清洗花瓶，加入1/3-1/2清水，滴入鲜花保鲜剂</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">2</span>
+              <span>修剪花材：花杆45°斜剪，根据花瓶高度调整长度，去除浸入水中的叶片</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">3</span>
+              <span>插入主花：将主花材插入花瓶，保持高低错落，避免过于整齐</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">4</span>
+              <span>添加配叶：在主花两侧插入配叶，起到平衡和衬托作用</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">5</span>
+              <span>点缀配花：在空隙处插入少量配花，增加细节感，不宜过多</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">6</span>
+              <span>调整造型：轻轻调整花材角度，使整体造型自然、简约，有呼吸感</span>
+            </li>
+          </ol>
+
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-lightbulb-o mr-2"></i> 简约风格技巧：少即是多，花材数量不宜过多，留白更显高级感，花杆长度建议为花瓶高度的1.5倍</p>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/ping1.jpg" alt="瓶插制作1" class="w-full h-auto">
+          </div>
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="vi/p.jpg" alt="瓶插制作2" class="w-full h-auto">
+          </div>
+          <!-- 教程视频 -->
+          <div class="mt-4 rounded-lg overflow-hidden retro-shadow hover-scale">
+            <video controls class="w-full h-auto">
+              <source src="vi/ping2.mp4" type="video/mp4">
+              浏览器不支持视频播放
+            </video>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">简约瓶插制作演示</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 干花制作教程（默认隐藏） -->
+    <div class="course-content hidden" id="干花">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">干花制作教程</h4>
+          
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">准备材料</h5>
+          <ul class="text-base space-y-2 mb-6 list-disc list-inside">
+            <li>花材：玫瑰/满天星/勿忘我/薰衣草/尤加利（选择半开放的花材）</li>
+            <li>工具：麻绳、剪刀、通风的篮子/衣架、干燥剂（可选）</li>
+            <li>场地：干燥、通风、避光的空间</li>
+          </ul>
+
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">制作步骤（自然风干法）</h5>
+          <ol class="text-base space-y-4 mb-6">
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">1</span>
+              <span>处理花材：去除多余叶片，保留花杆，将花材分成小束（5-8枝/束）</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">2</span>
+              <span>捆绑花束：用麻绳在花杆顶部捆绑，注意留有余量，避免风干后花杆收缩断裂</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">3</span>
+              <span>倒挂风干：将花束倒挂在通风、避光的地方，保持花头朝下，避免挤压</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">4</span>
+              <span>等待干燥：根据花材不同，风干时间约1-2周，玫瑰需2周左右，满天星1周即可</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">5</span>
+              <span>检查完成：轻触花瓣，感觉干燥、脆硬即完成，若花瓣易脱落则风干过度</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">6</span>
+              <span>成品处理：可插入花瓶装饰，或制作成相框、香包等工艺品</span>
+            </li>
+          </ol>
+
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-lightbulb-o mr-2"></i> 快速风干技巧：使用干燥剂掩埋花材，2-3天即可完成，颜色保留更好，但成本较高</p>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/ganhua.jpg" alt="干花制作1" class="w-full h-auto">
+          </div>
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/ganhua1.jpg" alt="干花制作2" class="w-full h-auto">
+          </div>
+          <!-- 教程视频 -->
+          <div class="mt-4 rounded-lg overflow-hidden retro-shadow hover-scale">
+            <video controls class="w-full h-auto">
+              <source src="vi/ganhua2.mp4" type="video/mp4">
+              浏览器不支持视频播放
+            </video>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">干花制作演示</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 鲜花保养教程（默认隐藏） -->
+    <div class="course-content hidden" id="保养">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">鲜花保养技巧</h4>
+          
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">日常保养通用技巧</h5>
+          <ol class="text-base space-y-4 mb-6">
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">1</span>
+              <span>水质管理：每天更换清水，清洗花瓶和花杆，避免细菌滋生</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">2</span>
+              <span>花杆修剪：每次换水时45°斜剪花杆1-2cm，增加吸水面积</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">3</span>
+              <span>环境控制：避免阳光直射、空调出风口、水果旁（乙烯会加速花材老化）</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">4</span>
+              <span>叶片处理：去除浸入水中的叶片，只保留花头下方少量叶片</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">5</span>
+              <span>保鲜剂使用：按比例添加鲜花保鲜剂，可延长花期3-5天</span>
+            </li>
+            <li class="flex items-start">
+              <span class="step-number flex-shrink-0">6</span>
+              <span>急救处理：枯萎花材可深水醒花（花头不沾水）2-4小时，恢复生机</span>
+            </li>
+          </ol>
+
+          <h5 class="font-medium text-lg mb-4 text-retro-brown">不同花材专属保养</h5>
+          <ul class="text-base space-y-3 mb-6 list-disc list-inside">
+            <li><span class="font-medium">玫瑰：</span>去除花刺，花头保持干燥，避免喷水</li>
+            <li><span class="font-medium">郁金香：</span>浅水养护，可保留叶片，会继续生长</li>
+            <li><span class="font-medium">百合：</span>去除花蕊（避免花粉弄脏衣物），远离儿童和宠物（有毒）</li>
+            <li><span class="font-medium">康乃馨：</span>深水养护，可保留较多叶片</li>
+            <li><span class="font-medium">绣球：</span>整枝花杆浸泡水中20分钟，深水养护，经常喷水</li>
+          </ul>
+
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-lightbulb-o mr-2"></i> 保鲜小偏方：清水中加入少量白糖（1L水+5g糖），可替代保鲜剂，延长花期</p>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/yanghu.jpg" alt="鲜花保养1" class="w-full h-auto">
+          </div>
+          <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+            <img src="imag/yanghu2.jpg" alt="鲜花保养2" class="w-full h-auto">
+          </div>
+          <!-- 教程视频 -->
+          <div class="mt-4 rounded-lg overflow-hidden retro-shadow hover-scale">
+            <video controls class="w-full h-auto">
+              <source src="vi/xianhua.mp4" type="video/mp4">
+              浏览器不支持视频播放
+            </video>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">鲜花保养演示</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.course-tab');
+      const contents = document.querySelectorAll('.course-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 切换内容
+          contents.forEach(content => content.classList.add('hidden'));
+          const target = tab.getAttribute('data-course');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

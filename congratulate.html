@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>祝贺送礼 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="text-retro-pink">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="img/0488b9344153e73d6c497748cfb1b2be.jpg" alt="祝贺送礼花艺" class="w-full h-auto">
+    </div>
+
+    <!-- 节日标签（带交互） -->
+    <h3 class="font-song text-2xl text-center mb-8 text-retro-brown">祝贺送礼场景推荐</h3>
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="congra-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-holiday="生日">生日祝福</button>
+      <button class="congra-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-holiday="乔迁">乔迁之喜</button>
+      <button class="congra-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-holiday="开业">开业大吉</button>
+      <button class="congra-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-holiday="毕业">毕业祝福</button>
+      <button class="congra-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-holiday="结婚">新婚祝福</button>
+    </div>
+
+    <!-- 生日内容（默认显示） -->
+    <div class="congra-content" id="生日">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">生日祝福花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">女生生日</span>：粉玫瑰+郁金香+满天星，花语“永远少女，永远浪漫”，粉白色系温柔治愈</li>
+            <li><span class="font-medium">男生生日</span>：向日葵+香槟玫瑰+尤加利，花语“前程似锦，万事顺意”，低调有品位</li>
+            <li><span class="font-medium">长辈生日</span>：康乃馨+百合+剑兰，花语“健康长寿，幸福安康”，喜庆又温馨</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-birthday-cake mr-2"></i> 加分技巧：搭配生日主题卡片，花束包装用对方喜欢的色系</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/291b1a70e6d199ae645cacd2fa31162d.jpg" alt="生日花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 乔迁内容（默认隐藏） -->
+    <div class="congra-content hidden" id="乔迁">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">乔迁之喜花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">高端盆栽</span>：蝴蝶兰（鸿运当头）、发财树（财源广进）、幸福树（阖家幸福）</li>
+            <li><span class="font-medium">花艺摆件</span>：红掌+天堂鸟，花语“大展宏图，红红火火”，适合新居客厅</li>
+            <li><span class="font-medium">花束礼盒</span>：香槟玫瑰+桔梗+尤加利，花语“新居新起点，万事皆顺意”</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-home mr-2"></i> 送礼禁忌：避免送钟（终）、梨（离）相关的花艺，选寓意吉祥的品种</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/7e9d460f7cc52b7a06e30eebbd663937.jpg" alt="乔迁花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 开业内容（默认隐藏） -->
+    <div class="congra-content hidden" id="开业">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">开业大吉花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">开业花篮</span>：剑兰+百合+红掌，花语“生意兴隆，财源广进”，大气上档次</li>
+            <li><span class="font-medium">前台花艺</span>：向日葵+香槟玫瑰，花语“蒸蒸日上，前程似锦”，适合办公环境</li>
+            <li><span class="font-medium">盆栽摆件</span>：金钱树+富贵竹，花语“招财进宝，节节高升”，好养又吉利</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-briefcase mr-2"></i> 商务礼仪：开业花艺选红色/金色系，避免冷色系，花篮要成对送</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/6454b17d78a37575f3889341454d2b1f.jpg" alt="开业花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 毕业内容（默认隐藏） -->
+    <div class="congra-content hidden" id="毕业">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">毕业祝福花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">向日葵花束</span>：花语“前程似骄阳，一路生花”，最经典的毕业花束</li>
+            <li><span class="font-medium">满天星+玫瑰</span>：花语“青春不散场，未来皆可期”，适合同学之间赠送</li>
+            <li><span class="font-medium">郁金香花束</span>：花语“优雅前行，不负韶华”，适合送给毕业生长辈</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-graduation-cap mr-2"></i> 创意玩法：花束里藏手写祝福卡片，或搭配毕业小熊玩偶</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/744216a62ecdc9e80b943104a752c2ee.jpg" alt="毕业花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 结婚内容（默认隐藏） -->
+    <div class="congra-content hidden" id="结婚">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">新婚祝福花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">新娘手捧花</span>：白玫瑰+铃兰，花语“幸福归来，百年好合”，经典永不过时</li>
+            <li><span class="font-medium">婚房花艺</span>：红玫瑰+百合+满天星，花语“爱意永恒，阖家美满”，喜庆浪漫</li>
+            <li><span class="font-medium">送礼花束</span>：香槟玫瑰+桔梗，花语“往后余生，皆是浪漫”，温柔又高级</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 婚礼花艺：避免送黄玫瑰（分手）、白色菊花（哀悼），选红/粉/香槟色系</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/849dbc6dfdf1aa4a13a49fff830c52cf.jpg" alt="结婚花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.congra-tab');
+      const contents = document.querySelectorAll('.congra-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 切换内容
+          contents.forEach(content => content.classList.add('hidden'));
+          const target = tab.getAttribute('data-holiday');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

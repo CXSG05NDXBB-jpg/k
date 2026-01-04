@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表达爱意 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="text-retro-pink">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="img/ec826f6accf07c0a285137d2c5b3c4de.jpg" alt="表达爱意花艺" class="w-full h-auto">
+    </div>
+
+    <!-- 爱意标签（带交互） -->
+    <h3 class="font-song text-2xl text-center mb-8 text-retro-brown">爱意表达花艺推荐</h3>
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="love-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-love="告白">告白</button>
+      <button class="love-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-love="热恋">热恋</button>
+      <button class="love-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-love="纪念日">纪念日</button>
+      <button class="love-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-love="挽回">挽回</button>
+      <button class="love-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-love="暗恋">暗恋</button>
+    </div>
+
+    <!-- 告白内容（默认显示） -->
+    <div class="love-content" id="告白">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">告白花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">经典告白</span>：99朵红玫瑰，花语“爱你天长地久”，直接又热烈</li>
+            <li><span class="font-medium">温柔告白</span>：粉玫瑰+白桔梗，花语“我对你的爱，温柔又坚定”</li>
+            <li><span class="font-medium">文艺告白</span>：白玫瑰+茉莉，花语“送君茉莉，愿君莫离”，含蓄又浪漫</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 告白技巧：搭配手写卡片，选对方喜欢的花材，在有纪念意义的场景送出</p>
+          </div>
+          <!-- 音频播放 -->
+          <div class="mt-6">
+            <audio controls class="w-full">
+              <source src="vi/mu.mp3" type="audio/mpeg">
+              浏览器不支持音频播放
+            </audio>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">告白背景音乐</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/8c249f07cb67fe6639ee873d2ea31830.jpg"alt="告白花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 热恋内容（默认隐藏） -->
+    <div class="love-content hidden" id="热恋">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">热恋花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">红玫瑰+满天星</span>：花语“我的眼里只有你”，热烈又甜蜜</li>
+            <li><span class="font-medium">香槟玫瑰+洋桔梗</span>：花语“爱上你是我今生最大的幸福”</li>
+            <li><span class="font-medium">郁金香花束</span>：花语“爱的告白、永恒的祝福”，适合日常惊喜</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 热恋惊喜：不定期送小花束，比节日送花更能增进感情</p>
+          </div>
+          <!-- 音频播放 -->
+          <div class="mt-6">
+            <audio controls class="w-full">
+              <source src="vi/mu.mp3" type="audio/mpeg">
+              浏览器不支持音频播放
+            </audio>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">热恋背景音乐</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/94b8ccdf7470bf78a5eba0c610eec109.jpg" alt="热恋花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 纪念日内容（默认隐藏） -->
+    <div class="love-content hidden" id="纪念日">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">纪念日花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">1周年</span>：纸玫瑰（永生花），花语“初心不变，爱意永恒”</li>
+            <li><span class="font-medium">3周年</span>：黄玫瑰+白玫瑰，花语“感谢陪伴，余生共赴”</li>
+            <li><span class="font-medium">5周年</span>：蓝色妖姬+满天星，花语“矢志不渝的爱”</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 纪念日仪式感：花束+定制卡片，记录相处的美好瞬间</p>
+          </div>
+          <!-- 音频播放 -->
+          <div class="mt-6">
+            <audio controls class="w-full">
+              <source src="vi/mu.mp3" type="audio/mpeg">
+              浏览器不支持音频播放
+            </audio>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">纪念日背景音乐</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/c81fbd09dff1a6de7bded40724238e3d.jpg" alt="纪念日花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 挽回内容（默认隐藏） -->
+    <div class="love-content hidden" id="挽回">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">挽回花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">黄玫瑰+勿忘我</span>：花语“对不起，请原谅我，勿忘初心”</li>
+            <li><span class="font-medium">白玫瑰+桔梗</span>：花语“重新开始，我依然爱你”</li>
+            <li><span class="font-medium">薰衣草花束</span>：花语“等待爱情，等你回头”</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 挽回技巧：花束里放手写道歉信，真诚比花材更重要</p>
+          </div>
+          <!-- 音频播放 -->
+          <div class="mt-6">
+            <audio controls class="w-full">
+              <source src="vi/mu.mp3" type="audio/mpeg" />
+              浏览器不支持音频播放
+            </audio>
+            <p class="text-xs text-center mt-2 text-retro-brown/70">挽回背景音乐</p>
+          </div>
+        </div>
+		
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/35efaaf2b9eac581d0a7206470193930.jpg" alt="挽回花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 暗恋内容（默认隐藏） -->
+    <div class="love-content hidden" id="暗恋">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">暗恋花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">雏菊+满天星</span>：花语“深藏在心底的爱”，低调又温柔</li>
+            <li><span class="font-medium">白玫瑰+小苍兰</span>：花语“纯洁的喜欢，默默守护”</li>
+            <li><span class="font-medium">蓝色绣球花</span>：花语“期待你的回应，希望能在一起”</li>
+          </ul> <!-- 补充闭合标签 -->
+          <div class="mt-6 p-4 bg-retro-pink/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 暗恋小心机：匿名送花，卡片只写花语不署名，留小线索让对方猜到你</p>
+          </div>
+          <!-- 音频播放 -->
+         <!-- 暗恋板块音频区域修正后的代码 -->
+<div class="mt-6">
+  <audio src="vi/mu.mp3" controls loop class="w-full">
+    浏览器不支持音频播放
+  </audio>
+  <p class="text-xs text-center mt-2 text-retro-brown/70">暗恋背景音乐</p>
+</div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/3c734e43a06839c6406f5752ef9dbc7d.jpg" alt="暗恋花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.love-tab');
+      const contents = document.querySelectorAll('.love-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 切换内容
+          contents.forEach(content => content.classList.add('hidden'));
+          const target = tab.getAttribute('data-love');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

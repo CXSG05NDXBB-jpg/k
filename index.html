@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花里有话 - 懂花更懂你</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+      .text-shadow-lg { text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="hover:text-retro-pink transition-colors">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="img/2ae7f81a17431541a1d7aa0ae28c2fa8.jpg" alt="复古花卉背景" class="w-full h-full object-cover opacity-90">
+      <div class="absolute inset-0 bg-retro-brown/20 backdrop-blur-sm"></div>
+    </div>
+    <div class="container mx-auto px-4 z-10 text-center">
+      <h1 class="text-[clamp(3rem,10vw,5rem)] font-song font-bold text-retro-dark text-shadow-lg mb-6">花里有话</h1>
+      <p class="text-[clamp(1rem,3vw,1.5rem)] text-retro-dark/80 max-w-2xl mx-auto mb-8 font-serif">
+        每一束花，都藏着未说出口的温柔
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="flower-encyclopedia.html" class="px-8 py-3 bg-retro-pink/70 hover:bg-retro-pink text-white rounded-full retro-shadow hover-scale transition-colors">
+          花语百科 <i class="fa fa-book ml-2"></i>
+        </a>
+        <a href="flower-course.html" class="px-8 py-3 bg-retro-blue/70 hover:bg-retro-blue text-white rounded-full retro-shadow hover-scale transition-colors">
+          花艺教程 <i class="fa fa-scissors ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 花卉分类 -->
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="font-song text-3xl text-center mb-12 text-retro-brown">花卉图鉴</h2>
+    
+    <!-- 分类标签（带交互） -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="flower-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-flower="海棠">海棠</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="雏菊">雏菊</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="玫瑰">玫瑰</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="百合">百合</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="牡丹">牡丹</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="樱花">樱花</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="芍药">芍药</button>
+      <button class="flower-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-flower="山茶">山茶</button>
+    </div>
+
+    <!-- 海棠内容（默认显示） -->
+    <div class="flower-content" id="海棠">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">海棠花语</h3>
+          <p class="text-base leading-loose">
+            海棠象征“温和、美丽、快乐”，也有“苦恋”的寓意（因“棠”与“堂”同音，古代常用来表达“相思”）。<br>
+            不同品种的海棠花语不同：<br>
+            - 西府海棠：端庄、娴静<br>
+            - 垂丝海棠：游子思乡、善解人意<br>
+            - 贴梗海棠：热情、坚韧
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/5033804c774bcc05f014af30a61b8141.jpg" alt="海棠" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 雏菊内容（默认隐藏） -->
+    <div class="flower-content hidden" id="雏菊">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">雏菊花语</h3>
+          <p class="text-base leading-loose">
+            雏菊的花语是“纯洁的美、天真、希望、和平”，也代表“深藏在心底的爱”。<br>
+            白色雏菊象征纯洁无瑕；黄色雏菊代表快乐、活力；粉色雏菊寓意温柔的暗恋。
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/90c1eeaeac104b444452d89a54929ea5.jpg" alt="雏菊" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 玫瑰内容（默认隐藏） -->
+    <div class="flower-content hidden" id="玫瑰">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">玫瑰花语</h3>
+          <p class="text-base leading-loose">
+            玫瑰是“爱情”的象征，不同颜色含义不同：<br>
+            - 红玫瑰：我爱你、热恋<br>
+            - 粉玫瑰：初恋、温柔的爱<br>
+            - 白玫瑰：纯洁、尊敬<br>
+            - 黄玫瑰：友情、歉意
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/b640a72ac510a08e691181280c90c0cd.jpg" alt="玫瑰" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 百合内容（默认隐藏） -->
+    <div class="flower-content hidden" id="百合">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">百合花语</h3>
+          <p class="text-base leading-loose">
+            百合的花语是“百年好合、纯洁、庄严、心心相印”。<br>
+            白色百合象征神圣纯洁；粉色百合代表甜美温柔；黄色百合寓意财富与高贵。
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/8c09e8eeaa05095191abc23de1a8fa11.jpg" alt="百合" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 牡丹内容（默认隐藏） -->
+    <div class="flower-content hidden" id="牡丹">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">牡丹花语</h3>
+          <p class="text-base leading-loose">
+            牡丹被誉为“花中之王”，花语是“富贵吉祥、圆满浓情、雍容华贵”。<br>
+            红色牡丹象征富贵圆满；粉色牡丹代表雍容典雅；白色牡丹寓意高洁端庄。
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/1bf6ac5dc22b38d29c6a7dda1c525b72.jpg" alt="牡丹" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 樱花内容（默认隐藏） -->
+    <div class="flower-content hidden" id="樱花">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">樱花花语</h3>
+          <p class="text-base leading-loose">
+            樱花的花语是“生命、幸福、热烈、纯洁”，也代表“短暂而美好的爱情”。<br>
+            樱花的花期短暂，寓意珍惜当下的美好，把握转瞬即逝的幸福。
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/0f00aa5593490aead6b83ad365200244.jpg" alt="樱花" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 芍药内容（默认隐藏） -->
+    <div class="flower-content hidden" id="芍药">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">芍药花语</h3>
+          <p class="text-base leading-loose">
+            芍药被称为“花中宰相”，花语是“情有所钟、依依惜别、难舍难分”。<br>
+            芍药是古代男女定情的信物，象征着真挚又深沉的爱意。
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/e904ce4e0bd2ace495f6b025a3779f35.jpg" alt="芍药" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 山茶内容（默认隐藏） -->
+    <div class="flower-content hidden" id="山茶">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h3 class="font-song text-2xl mb-6 text-retro-brown">山茶花语</h3>
+          <p class="text-base leading-loose">
+            山茶的花语是“理想的爱、谦让、高洁孤傲”。<br>
+            红色山茶象征热情奔放；白色山茶代表纯洁无瑕；粉色山茶寓意含蓄的爱意。
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="vi/shancha.png" alt="山茶" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="font-song text-lg mb-2">等到晴方好，与你不负花期</p>
+      <p class="font-song text-lg mb-4">等万事可期，你能遇见更好的自己</p>
+      <p class="text-sm text-retro-brown italic">
+        Make an ordinary day romantic, put it in a flower
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    // 花卉标签切换交互
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.flower-tab');
+      const contents = document.querySelectorAll('.flower-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置所有标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 隐藏所有内容
+          contents.forEach(content => content.classList.add('hidden'));
+          // 显示对应内容
+          const target = tab.getAttribute('data-flower');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

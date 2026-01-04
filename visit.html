@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>探望拜访 - 花里有话</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retro: {
+              brown: '#8B7355',
+              blue: '#BFD7E4',
+              pink: '#C88A9E',
+              beige: '#F9F5F0',
+              lightbrown: '#E8DED1',
+              dark: '#5A4B3C',
+            },
+          },
+          fontFamily: {
+            song: ['Ma Shan Zheng', 'Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .retro-border { border: 1px solid rgba(139, 115, 85, 0.2); }
+      .retro-shadow { box-shadow: 2px 2px 8px rgba(139, 115, 85, 0.1); }
+      .hover-scale { transition: all 0.3s ease; }
+      .hover-scale:hover { transform: scale(1.03); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='80'>🌷</text></svg>">
+</head>
+<body class="bg-retro-beige text-retro-dark font-sans">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-retro-beige/98 backdrop-blur-sm border-b border-retro-brown/20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-sm text-retro-brown">欢迎访问</div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-retro-dark">
+        <a href="visit.html" class="text-retro-pink">探望拜访</a>
+        <a href="home.html" class="hover:text-retro-pink transition-colors">家用装饰</a>
+        <a href="congratulate.html" class="hover:text-retro-pink transition-colors">祝贺送礼</a>
+        <a href="express.html" class="hover:text-retro-pink transition-colors">表达爱意</a>
+        <a href="flower-encyclopedia.html" class="hover:text-retro-pink transition-colors">花语百科</a>
+        <a href="flower-course.html" class="hover:text-retro-pink transition-colors">花艺教程</a>
+        <a href="user-story.html" class="hover:text-retro-pink transition-colors">用户故事</a>
+        <a href="index.html" class="hover:text-retro-pink transition-colors">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="rounded-lg overflow-hidden retro-shadow mb-10 hover-scale">
+      <img src="img/fengmian.jpg" alt="探望拜访花艺" class="w-full h-auto">
+    </div>
+
+    <!-- 场景标签（带交互） -->
+    <h3 class="font-song text-2xl text-center mb-8 text-retro-brown">探望拜访场景推荐</h3>
+    <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-retro-brown/20 pb-6">
+      <button class="visit-tab px-6 py-2 text-base bg-retro-pink/40 rounded-full retro-shadow hover-scale" data-scene="探病">探病慰问</button>
+      <button class="visit-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-scene="长辈">拜访长辈</button>
+      <button class="visit-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-scene="朋友">拜访朋友</button>
+      <button class="visit-tab px-6 py-2 text-base hover:bg-retro-blue/30 rounded-full retro-shadow hover-scale" data-scene="客户">拜访客户</button>
+    </div>
+
+    <!-- 探病内容（默认显示） -->
+    <div class="visit-content" id="探病">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">探病慰问花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">洋甘菊+康乃馨</span>：洋甘菊代表坚韧勇敢，康乃馨代表温馨祝福，花色选浅色系（避免大红大紫）</li>
+            <li><span class="font-medium">剑兰+百合</span>：剑兰寓意节节高升，百合象征健康平安，香气清淡不刺激</li>
+            <li><span class="font-medium">向日葵+小雏菊</span>：向日葵代表阳光希望，小雏菊寓意快乐，给病房带来活力</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-exclamation-circle mr-2"></i> 探病避坑：避免送浓郁香气的花（百合选无香款）、避免白色菊花、避免带刺的花</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/bing.jpg" alt="探病花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 拜访长辈内容（默认隐藏） -->
+    <div class="visit-content hidden" id="长辈">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">拜访长辈花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">牡丹+康乃馨</span>：牡丹象征富贵吉祥，康乃馨代表感恩祝福，符合长辈审美</li>
+            <li><span class="font-medium">兰花+君子兰</span>：兰花寓意高洁典雅，君子兰象征君子之风，适合儒雅的长辈</li>
+            <li><span class="font-medium">长寿花+仙客来</span>：长寿花寓意健康长寿，仙客来代表欢迎贵客，盆栽更实用</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-lightbulb-o mr-2"></i> 长辈喜好：花色选红色、粉色、黄色等喜庆色系，花材选花期长的品种</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="imag/baizhang.png" alt="拜访长辈花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 拜访朋友内容（默认隐藏） -->
+    <div class="visit-content hidden" id="朋友">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">拜访朋友花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">玫瑰+洋桔梗</span>：玫瑰代表友情，洋桔梗象征真诚不变，轻松又温馨</li>
+            <li><span class="font-medium">郁金香+满天星</span>：郁金香寓意美好祝福，满天星代表关怀，适合年轻朋友</li>
+            <li><span class="font-medium">多肉组合盆栽</span>：好养又实用，象征友谊长久，适合喜欢绿植的朋友</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-heart mr-2"></i> 朋友专属：可以根据朋友的喜好选花，搭配手写卡片更有心意</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/pengyou.png" alt="拜访朋友花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- 拜访客户内容（默认隐藏） -->
+    <div class="visit-content hidden" id="客户">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg retro-shadow hover-scale">
+          <h4 class="font-song text-xl mb-6 text-retro-brown border-b border-retro-brown/20 pb-3">拜访客户花艺推荐</h4>
+          <ul class="text-base space-y-4 list-disc list-inside">
+            <li><span class="font-medium">蝴蝶兰盆栽</span>：蝴蝶兰象征鸿运当头，高端大气，适合商务拜访</li>
+            <li><span class="font-medium">红掌+天堂鸟</span>：红掌代表大展宏图，天堂鸟寓意事业高升，商务感十足</li>
+            <li><span class="font-medium">石斛兰+剑兰</span>：石斛兰象征吉祥富贵，剑兰代表步步高升，低调又有品位</li>
+          </ul>
+          <div class="mt-6 p-4 bg-retro-blue/10 rounded-lg">
+            <p class="text-sm text-retro-brown"><i class="fa fa-briefcase mr-2"></i> 商务礼仪：花材选高档盆栽，避免过于鲜艳的切花，包装简洁大气</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden retro-shadow hover-scale">
+          <img src="img/guke.jpg" alt="拜访客户花艺" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="bg-retro-lightbrown py-10 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-4xl text-retro-pink/70 mb-4">🌷</div>
+      <p class="text-sm text-retro-brown italic">
+        Every flower has its own language, every heart has its own story
+      </p>
+    </div>
+  </footer>
+
+  <!-- 交互JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.visit-tab');
+      const contents = document.querySelectorAll('.visit-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // 重置标签样式
+          tabs.forEach(t => {
+            t.classList.remove('bg-retro-pink/40');
+            t.classList.add('hover:bg-retro-blue/30');
+          });
+          // 高亮当前标签
+          tab.classList.add('bg-retro-pink/40');
+          tab.classList.remove('hover:bg-retro-blue/30');
+          
+          // 切换内容
+          contents.forEach(content => content.classList.add('hidden'));
+          const target = tab.getAttribute('data-scene');
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
